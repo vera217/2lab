@@ -7,14 +7,14 @@ class Program
     static void Main(string[] args)
     {
         
-        string fileData = FileHandler.ReadFile("file.txt");
+        string fileData = FileHandler.ReadFile("C:\\Users\\Vera\\source\\repos\\2lab\\2lab\\file.txt");
         List<object> fileObjects = FileHandler.ParseData(fileData);
         PrintObjects(fileObjects);
 
         
         Console.WriteLine("Вывод из строки \n");
         string stringData = "Поступление товаров: 2023.01.05; 'яблоки'; 20;\n" +
-            "Поставщик: ООО 'Фрукты'; Петр Иванов; +79991234567\n" +
+            "Поставщик: ООО 'Фрукты'; Петр Иванов; +79991234567;\n" +
             "Акт возврата: 2020.03.01; 'яблоки'; 5; Некачественный товар\n ";
         List<object> stringObjects = ParseData(stringData);
         PrintObjects(stringObjects);

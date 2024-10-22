@@ -22,7 +22,7 @@ namespace _2lab
 
         public virtual string PrintInfo()
         {
-            return $"Дата: {Date.ToShortDateString()} \nНазвание: {Name} \nКоличество: {Quantity}";
+            return $"Дата: {Date.ToShortDateString()} \nНазвание: {Name} \nКоличество: {Quantity} \n";
         }
     }
 }
