@@ -18,7 +18,6 @@ namespace _2lab
             ContactPerson = contactPerson;
             PhoneNumber = phoneNumber;
         }
-
         public string PrintInfo() => $"Поставщик: {Name}\nКонтактное лицо: {ContactPerson}\nТелефон: {PhoneNumber}\n";
     }
 }

@@ -20,7 +20,6 @@ namespace _2lab
             Quantity = quantity;
             Reason = reason;
         }
-
         public string PrintInfo() => $"Дата возврата: {Date.ToShortDateString()}\nТовар: {ProductName}\nКоличество: {Quantity}\nПричина: {Reason}\n";
     }
 }

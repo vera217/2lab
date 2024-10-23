@@ -19,7 +19,6 @@ namespace _2lab
             Quantity = quantity;
 
         }
-
         public virtual string PrintInfo()
         {
             return $"Дата: {Date.ToShortDateString()} \nНазвание: {Name} \nКоличество: {Quantity} \n";

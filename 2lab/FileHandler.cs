@@ -8,12 +8,10 @@ namespace _2lab
 {
     public class FileHandler
     {
-
         public static string ReadFile(string filePath)
         {
             return File.ReadAllText(filePath);
         }
-
         public static List<object> ParseData(string data)
         {
             var objects = new List<object>();
@@ -25,17 +23,14 @@ namespace _2lab
             }
             return objects;
         }
-
         private static Product ParseProduct(string entry)
         {
             var parts = entry.Split(';');
-            return new Product(
-                DateTime.ParseExact(parts[0].Substring(parts[0].IndexOf(":") + 1).Trim(), "yyyy.MM.dd", null),
+            return new Product( DateTime.ParseExact(parts[0].Substring(parts[0].IndexOf(":") + 1).Trim(), "yyyy.MM.dd", null),
                 parts[1].Trim(' ', '\''),
                 int.Parse(parts[2].Trim())
             );
         }
-
         private static Supplier ParseSupplier(string entry)
         {
             var parts = entry.Split(';');
@@ -45,12 +40,10 @@ namespace _2lab
                 parts[2].Trim()
             );
         }
-
         private static ReturnAct ParseReturnAct(string entry)
         {
             var parts = entry.Split(';');
-            return new ReturnAct(
-                DateTime.ParseExact(parts[0].Substring(parts[0].IndexOf(":") + 1).Trim(), "yyyy.MM.dd", null),
+            return new ReturnAct(DateTime.ParseExact(parts[0].Substring(parts[0].IndexOf(":") + 1).Trim(), "yyyy.MM.dd", null),
                 parts[1].Trim(' ', '\''),
                 int.Parse(parts[2].Trim()),
                 parts[3].Trim()

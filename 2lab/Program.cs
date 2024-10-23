@@ -11,7 +11,6 @@ class Program
         List<object> fileObjects = FileHandler.ParseData(fileData);
         PrintObjects(fileObjects);
 
-        
         Console.WriteLine("Вывод из строки \n");
         string stringData = "Поступление товаров: 2023.01.05; 'яблоки'; 20;\n" +
             "Поставщик: ООО 'Фрукты'; Петр Иванов; +79991234567;\n" +
@@ -19,7 +18,6 @@ class Program
         List<object> stringObjects = ParseData(stringData);
         PrintObjects(stringObjects);
     }
-
     static List<object> ParseData(string data)
     {
         var objects = new List<object>();
@@ -31,17 +29,14 @@ class Program
         }
         return objects;
     }
-
     static Product ParseProduct(string entry)
     {
         var parts = entry.Split(';');
-        return new Product(
-            DateTime.ParseExact(parts[0].Substring(parts[0].IndexOf(":") + 1).Trim(), "yyyy.MM.dd", null),
+        return new Product(DateTime.ParseExact(parts[0].Substring(parts[0].IndexOf(":") + 1).Trim(), "yyyy.MM.dd", null),
             parts[1].Trim(' ', '\''),
             int.Parse(parts[2].Trim())
         );
     }
-
     static Supplier ParseSupplier(string entry)
     {
         var parts = entry.Split(';');
@@ -51,7 +46,6 @@ class Program
             parts[2].Trim()
         );
     }
-
     static ReturnAct ParseReturnAct(string entry)
     {
         var parts = entry.Split(';');
@@ -62,7 +56,6 @@ class Program
             parts[3].Trim()
         );
     }
-
     static void PrintObjects(List<object> objects)
     {
         foreach (var obj in objects)
